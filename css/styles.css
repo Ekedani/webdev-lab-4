@@ -1,5 +1,75 @@
+:root {
+    --background-color: #edf2f4;
+    --menu-link-color: #edf2f4;
+    --menu-primary-color: #2b2d42;
+    --menu-button-size: 25px;
+    --menu-button-indent: 25px;
+}
+
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+}
+
+.menu {
+    font-family: 'Roboto', sans-serif;
+}
+
+.menu .toggle {
+    opacity: 0;
+}
+
+.menu label > span::before {
+    content: '';
+    top: -8px;
+}
+
+.menu label > span::after {
+    content: '';
+    top: 8px;
+}
+
+.menu label {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: var(--menu-button-indent);
+    left: var(--menu-button-indent);
+    width: var(--menu-button-size);
+    height: var(--menu-button-size);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.menu label > span,
+.menu label > span::before,
+.menu label > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: var(--menu-primary-color);
+    transition-duration: 0.25s;
+}
+
+.menu .toggle:checked ~ span {
+    transform: rotate(45deg);
+}
+
+.menu .toggle:checked ~ span::before {
+    top: 0;
+    transform: rotate(0);
+}
+
+.menu .toggle:checked ~ span::after {
+    top: 0;
+    transform: rotate(90deg);
 }
