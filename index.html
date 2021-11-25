@@ -12,8 +12,9 @@
     </head>
     <body>
         <div class="menu">
-            <label>
-                <input class="toggle" type="checkbox" />
+            <!--ID is used because of label. We can nest input in label, but then we can't properly select nav when input is checked-->
+            <input id="menu-toggle" type="checkbox" />
+            <label for="menu-toggle">
                 <span></span>
             </label>
             <nav>
@@ -21,7 +22,9 @@
                 <a href="#">Link 2</a>
                 <a href="#">Link 3</a>
                 <a href="#">Link 4</a>
-                <a href="#">Link 5</a>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                    >The best link</a
+                >
             </nav>
         </div>
     </body>
