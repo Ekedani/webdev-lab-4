@@ -14,16 +14,18 @@ jobs:
 
                 steps:
                     - uses: actions/checkout@v2
-                    - name: Using Node.js ${{ matrix.node-version }}
+                    - name: Use Node.js ${{ matrix.node-version }}
                       uses: actions/setup-node@v2
                       with:
                           node-version: ${{ matrix.node-version }}
                           cache: 'npm'
-                    - name: Installing dependencies
-                      run: npm install
-                    - name: Running Eslint
-                      run: npm run jslint
-                    - name: Running CSS lint
-                      run: npm run stylelint
-                    - name: Running Prettier
-                      run: npm run format
+                    - name: Install Eslint
+                      working-directory: ./laba2
+                      run: |
+                          npm ci
+                          npm install -g eslint
+                    - run: npm run build --if-present
+                    - name: Eslint working flow
+                      run: |
+                          npm run jslint
+                          npm run stylelint
