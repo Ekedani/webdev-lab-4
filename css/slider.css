@@ -1,7 +1,7 @@
 @import './root.css';
 
 .slider {
-    background-color: #fff;
+    background-color: var(--background-color);
     height: var(--slider-height);
     padding: var(--slider-padding);
     position: relative;
@@ -51,7 +51,6 @@
     height: 540px;
     opacity: 0;
     transition: 0.25s;
-    width: 700px;
     vertical-align: top;
     visibility: hidden;
 }
