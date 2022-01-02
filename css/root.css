@@ -3,10 +3,12 @@
     --menu-link-color: #edf2f4;
     --menu-primary-color: #2b2d42;
     --menu-checked-color: #151621;
+    --menu-shadow-color: rgba(0, 0, 0, 0.2);
     --menu-button-size: 25px;
     --menu-button-indent: 25px;
     --menu-width: 300px;
-    --menu-shadow-color: rgba(0, 0, 0, 0.2);
+    --slider-nav-color: #edf2f4;
+    --slider-nav-checked-color: #f64740;
     --slider-padding: 10px;
     --slider-width: 720px;
     --slider-height: 560px;
