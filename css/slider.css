@@ -1,0 +1,66 @@
+@import './root.css';
+
+.slider {
+    background-color: var(--background-color);
+    height: var(--slider-height);
+    padding: var(--slider-padding);
+    position: relative;
+    width: var(--slider-width);
+    align-self: center;
+}
+
+.slider li {
+    list-style: none;
+    position: absolute;
+}
+
+.slider input {
+    display: none;
+}
+
+.slider label {
+    background-color: var(--slider-nav-color);
+    bottom: 0.5em;
+    border-radius: 100%;
+    cursor: pointer;
+    display: block;
+    height: 0.85em;
+    position: absolute;
+    transition: 0.25s;
+    width: 0.85em;
+    z-index: 1;
+}
+
+.slider label:hover {
+    background-color: var(--slider-nav-checked-color);
+}
+
+.slider input:checked + label {
+    background-color: var(--slider-nav-checked-color);
+}
+
+.slider li:nth-child(1) label {
+    left: 45%;
+}
+
+.slider li:nth-child(2) label {
+    left: 50%;
+}
+
+.slider li:nth-child(3) label {
+    left: 55%;
+}
+
+.slider img {
+    height: 540px;
+    opacity: 0;
+    transition: 0.25s;
+    vertical-align: top;
+    visibility: hidden;
+}
+
+.slider li input:checked ~ img {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
